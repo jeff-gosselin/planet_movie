@@ -10,8 +10,13 @@
 * Added API Key to an initializer file
 * require 'themoviedb' in application.rb
 * Created serializers to hide data from being shown in the json
+	(not working for user show page)
 * Made Rating, Rental, Purchase, dependants of User and Movie models
 	(now if a user or movie instance gets destroyed so does its dependants)
+* Showing an individual movie on show page (@movie = Tmdb::Movie.detail(params[:id]))
+* Added validation for range of rating from 1 - 5 (Rating model)
+
+
 
 * What do I do to store rented and bought movies for a particular user???
 	Do I create a column movie with these data types...

@@ -8,5 +8,9 @@ class Api::V1::MoviesController < ApplicationController
 		render json: [latest: @latest, upcoming: @upcoming, now_playing: @now_playing, top_rated: @top_rated, popular: @popular]
 	end
 
-	
+	def show
+		@movie = Tmdb::Movie.detail(params[:id])
+		render json: @movie
+	end
+
 end

@@ -17,7 +17,6 @@ class Api::V1::RentalsController < ApplicationController
 	def destroy
 		@rental = Rental.find(params[:id])
 		@rental.destroy
-		render :json => @rental, each_serializer: RentalsSerializer
 	end
 
 

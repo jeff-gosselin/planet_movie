@@ -4,6 +4,11 @@ class Api::V1::RatingsController < ApplicationController
 		render json: @ratings
 	end
 
+	def show
+		@rating = Rating.find(params[:id])
+		render json: @rating
+	end
+
 	def create
 		@rating = Rating.create(rating_params)
 		render json: @rating
