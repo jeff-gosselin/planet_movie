@@ -12,6 +12,13 @@ Rental.destroy_all
 Purchase.destroy_all
 Rating.destroy_all
 
+latest_movies = JSON.parse(Tmdb::Movie.latest)
+
+byebug
+# latest_movies.each do |mov|
+# 	M
+# end
+
 
 jeff = User.create(name: 'Jeff', password_digest: 'abc123')
 meghan = User.create(name: 'Meghan', password_digest: 'xyz123')

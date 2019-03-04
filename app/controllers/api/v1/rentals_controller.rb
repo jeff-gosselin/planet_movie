@@ -5,7 +5,7 @@ class Api::V1::RentalsController < ApplicationController
 	end
 
 	def show
-		@rental = Rental.find(params[:id])
+		@rental = Tmdb::Movie.detail(params[:id])
 		render :json => @rental, each_serializer: RentalsSerializer
 	end
 
