@@ -12,8 +12,50 @@ Rental.destroy_all
 Purchase.destroy_all
 Rating.destroy_all
 
-latest_movies = Tmdb::Movie.latest
+latest = Tmdb::Movie.latest
+upcoming = Tmdb::Movie.upcoming
+now_playing = Tmdb::Movie.now_playing
 top_rated = Tmdb::Movie.top_rated
+popular = Tmdb::Movie.popular
+
+
+	# Movie.create(
+	# 	title: latest.results.title,
+  #   overview: latest.results.overview,
+  #   release_date: latest.results.release_date,
+  #   vote_average: latest.results.vote_average,
+  #   poster_path: latest.results.poster_path,
+  #   backdrop_path: latest.results.backdrop_path,
+  #   ref_code: latest.results.id,
+	# 	category: 'latest'
+	# )
+
+upcoming.results.each do |mov|
+	Movie.create(
+		title: mov.title,
+    overview: mov.overview,
+    release_date: mov.release_date,
+    vote_average: mov.vote_average,
+    poster_path: mov.poster_path,
+    backdrop_path: mov.backdrop_path,
+    ref_code: mov.id,
+		category: 'upcoming'
+	)
+end
+
+now_playing.results.each do |mov|
+	Movie.create(
+		title: mov.title,
+    overview: mov.overview,
+    release_date: mov.release_date,
+    vote_average: mov.vote_average,
+    poster_path: mov.poster_path,
+    backdrop_path: mov.backdrop_path,
+    ref_code: mov.id,
+		category: 'now_playing'
+	)
+end
+
 
 top_rated.results.each do |mov|
 	Movie.create(
@@ -23,7 +65,21 @@ top_rated.results.each do |mov|
     vote_average: mov.vote_average,
     poster_path: mov.poster_path,
     backdrop_path: mov.backdrop_path,
-    ref_code: mov.id
+    ref_code: mov.id,
+		category: 'top_rated'
+	)
+end
+
+popular.results.each do |mov|
+	Movie.create(
+		title: mov.title,
+    overview: mov.overview,
+    release_date: mov.release_date,
+    vote_average: mov.vote_average,
+    poster_path: mov.poster_path,
+    backdrop_path: mov.backdrop_path,
+    ref_code: mov.id,
+		category: 'popular'
 	)
 end
 

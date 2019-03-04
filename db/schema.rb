@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_163208) do
     t.string "poster_path"
     t.string "backdrop_path"
     t.bigint "ref_code"
+    t.string "category"
   end
 
   create_table "purchases", force: :cascade do |t|
