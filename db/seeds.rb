@@ -15,15 +15,15 @@ Rating.destroy_all
 latest_movies = Tmdb::Movie.latest
 top_rated = Tmdb::Movie.top_rated
 
-top_rated.each do |mov|
+top_rated.results.each do |mov|
 	Movie.create(
-		title: mov.results.title,
-    overview: mov.results.overview,
-    release_date: mov.results.release_date,
-    vote_average: mov.results.vote_average,
-    poster_path: mov.results.poster_path,
-    backdrop_path: mov.results.backdrop_path,
-    ref_code: mov.results.id
+		title: mov.title,
+    overview: mov.overview,
+    release_date: mov.release_date,
+    vote_average: mov.vote_average,
+    poster_path: mov.poster_path,
+    backdrop_path: mov.backdrop_path,
+    ref_code: mov.id
 	)
 end
 
