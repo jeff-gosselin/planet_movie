@@ -14,5 +14,10 @@ Rating.destroy_all
 
 
 jeff = User.create(name: 'Jeff', password_digest: 'abc123')
+meghan = User.create(name: 'Meghan', password_digest: 'xyz123')
 movie_1 = Movie.create()
+movie_2 = Movie.create()
+movie_3 = Movie.create()
 rental_1 = Rental.create(user_id: jeff.id, movie_id: movie_1.id)
+rental_2 = Rental.create(user_id: meghan.id, movie_id: movie_2.id)
+rental_3 = Rental.create(user_id: jeff.id, movie_id: movie_3.id)
