@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_163208) do
+ActiveRecord::Schema.define(version: 2019_03_05_145132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_163208) do
     t.string "backdrop_path"
     t.bigint "ref_code"
     t.string "category"
+    t.float "rental_price"
+    t.float "purchase_price"
   end
 
   create_table "purchases", force: :cascade do |t|
