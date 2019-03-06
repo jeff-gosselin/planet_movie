@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 			get 'movies/top-rated', to: 'movies#top_rated'
 			get 'movies/popular', to: 'movies#popular'
       resources :users
+			post '/login', to: 'auth#create'
+			get '/profile', to: 'users#profile'
       resources :movies
       resources :ratings
 			resources :rentals
