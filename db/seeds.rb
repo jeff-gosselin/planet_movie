@@ -40,8 +40,8 @@ upcoming.results.each do |mov|
     backdrop_path: mov.backdrop_path,
     ref_code: mov.id,
 		category: 'upcoming',
-		rental_price: 99.99,
-		purchase_price: 279.99
+		rental_price: 39.99,
+		purchase_price: 99.99
 	)
 end
 
@@ -55,8 +55,8 @@ now_playing.results.each do |mov|
     backdrop_path: mov.backdrop_path,
     ref_code: mov.id,
 		category: 'now_playing',
-		rental_price: 29.99,
-		purchase_price: 79.99
+		rental_price: 19.99,
+		purchase_price: 59.99
 	)
 end
 

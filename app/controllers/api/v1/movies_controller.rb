@@ -4,11 +4,6 @@ class Api::V1::MoviesController < ApplicationController
 		render json: @movies
 	end
 
-	def latest
-		@latest = Tmdb::Movie.latest
-		render json: @latest
-	end
-
 	def upcoming
 		@upcoming = Movie.all.select do |mov|
 			mov.category == 'upcoming'
