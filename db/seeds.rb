@@ -39,9 +39,7 @@ upcoming.results.each do |mov|
     poster_path: mov.poster_path,
     backdrop_path: mov.backdrop_path,
     ref_code: mov.id,
-		category: 'upcoming',
-		rental_price: 39.99,
-		purchase_price: 99.99
+		category: 'upcoming'
 	)
 end
 
@@ -54,9 +52,7 @@ now_playing.results.each do |mov|
     poster_path: mov.poster_path,
     backdrop_path: mov.backdrop_path,
     ref_code: mov.id,
-		category: 'now_playing',
-		rental_price: 19.99,
-		purchase_price: 59.99
+		category: 'now_playing'
 	)
 end
 
@@ -70,9 +66,7 @@ top_rated.results.each do |mov|
     poster_path: mov.poster_path,
     backdrop_path: mov.backdrop_path,
     ref_code: mov.id,
-		category: 'top_rated',
-		rental_price: 4.99,
-		purchase_price: 17.99
+		category: 'top_rated'
 	)
 end
 
@@ -85,9 +79,7 @@ popular.results.each do |mov|
     poster_path: mov.poster_path,
     backdrop_path: mov.backdrop_path,
     ref_code: mov.id,
-		category: 'popular',
-		rental_price: 6.99,
-		purchase_price: 19.99
+		category: 'popular'
 	)
 end
 
