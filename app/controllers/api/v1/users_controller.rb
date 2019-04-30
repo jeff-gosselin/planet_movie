@@ -32,7 +32,7 @@ class Api::V1::UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		@user.update(book_params)
+		@user.update(user_params)
 		render :json => @user, each_serializer: UserSerializer
 	end
 

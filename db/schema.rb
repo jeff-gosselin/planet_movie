@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_145132) do
+ActiveRecord::Schema.define(version: 2019_04_29_235924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "listings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "movie_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_listings_on_movie_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
+  end
 
   create_table "movies", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -26,36 +36,6 @@ ActiveRecord::Schema.define(version: 2019_03_05_145132) do
     t.string "backdrop_path"
     t.bigint "ref_code"
     t.string "category"
-    t.float "rental_price"
-    t.float "purchase_price"
-  end
-
-  create_table "purchases", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_purchases_on_movie_id"
-    t.index ["user_id"], name: "index_purchases_on_user_id"
-  end
-
-  create_table "ratings", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "viewer_rating"
-    t.index ["movie_id"], name: "index_ratings_on_movie_id"
-    t.index ["user_id"], name: "index_ratings_on_user_id"
-  end
-
-  create_table "rentals", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_rentals_on_movie_id"
-    t.index ["user_id"], name: "index_rentals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,10 +45,6 @@ ActiveRecord::Schema.define(version: 2019_03_05_145132) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "purchases", "movies"
-  add_foreign_key "purchases", "users"
-  add_foreign_key "ratings", "movies"
-  add_foreign_key "ratings", "users"
-  add_foreign_key "rentals", "movies"
-  add_foreign_key "rentals", "users"
+  add_foreign_key "listings", "movies"
+  add_foreign_key "listings", "users"
 end

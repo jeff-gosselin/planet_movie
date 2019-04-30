@@ -8,9 +8,7 @@
 
 User.destroy_all
 Movie.destroy_all
-Rental.destroy_all
-Purchase.destroy_all
-Rating.destroy_all
+
 
 latest = Tmdb::Movie.latest
 upcoming = Tmdb::Movie.upcoming
@@ -84,8 +82,8 @@ popular.results.each do |mov|
 end
 
 
-jeff = User.create(name: 'Jeff', password_digest: 'abc123')
-meghan = User.create(name: 'Meghan', password_digest: 'xyz123')
+jeff = User.create(name: 'Jeff', password: 'abc123')
+meghan = User.create(name: 'Meghan', password: 'xyz123')
 #
 # rental_1 = Rental.create(user_id: jeff.id, movie_id: movie_1.id)
 # rental_2 = Rental.create(user_id: meghan.id, movie_id: movie_2.id)

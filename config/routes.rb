@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
 	namespace :api do
     namespace :v1 do
-			get 'movies/latest', to: 'movies#latest'
 			get 'movies/upcoming', to: 'movies#upcoming'
 			get 'movies/now-playing', to: 'movies#now_playing'
 			get 'movies/top-rated', to: 'movies#top_rated'
@@ -18,9 +17,7 @@ Rails.application.routes.draw do
 			post '/login', to: 'auth#create'
 			get '/profile', to: 'users#profile'
       resources :movies
-      resources :ratings
-			resources :rentals
-			resources :purchases
+      resources :listings
     end
   end
 
