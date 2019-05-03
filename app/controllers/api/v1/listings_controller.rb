@@ -17,6 +17,6 @@ class Api::V1::ListingsController < ApplicationController
 	private
 
 	def listing_params
-		params.require(:listings).permit(:user_id, :movie_id)
+		params.require(:listing).permit(:user_id, :movie_id, :status)
 	end
 end
