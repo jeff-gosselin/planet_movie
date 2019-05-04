@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 			post '/login', to: 'auth#create'
 			get '/profile', to: 'users#profile'
       resources :movies
-      resources :listings
+			resources :views
+			resources :interests
     end
   end
 

@@ -1,4 +1,4 @@
-class AddColumnsToMovie < ActiveRecord::Migration[5.2]
+class AddColumnsToMovies < ActiveRecord::Migration[5.2]
   def change
     add_column :movies, :title, :string
     add_column :movies, :overview, :string
@@ -8,5 +8,6 @@ class AddColumnsToMovie < ActiveRecord::Migration[5.2]
     add_column :movies, :backdrop_path, :string
     add_column :movies, :ref_code, :bigint
     add_column :movies, :category, :string
+    add_column :movies, :ban, :boolean, :default => false
   end
 end
