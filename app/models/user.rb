@@ -4,4 +4,6 @@ class User < ApplicationRecord
 
 	has_many :views, :dependent => :delete_all
 	has_many :movies, through: :views
+	has_many :interests
+	has_many :movies, through: :interests
 end
