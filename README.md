@@ -1,45 +1,23 @@
-# README
+<h1>Movie Seen (aka Planet Movie)</h1>
 
-# INITIAL SETUP
-* Uses Rails 5.2.2 and PostgreSQL 11
-* Created new Rails project with "rails new planet_movie  --api -T --database=postgresql"
-* PostgreSQL 11 (In order for it to work paste "host: localhost" in database.yml)
-* Pasted gem 'rack-cors', require: 'rack/cors' into Gemfile
-* Pasted gem 'themoviedb-api'
-* Bundle install
-* Added API Key to an initializer file
-* require 'themoviedb' in application.rb
-* Created serializers to hide data from being shown in the json
-	(not working for user show page)
-* Made Rating, Rental, Purchase, dependants of User and Movie models
-	(now if a user or movie instance gets destroyed so does its dependants)
-* Showing an individual movie on show page (@movie = Tmdb::Movie.detail(params[:id]))
-* Added validation for range of rating from 1 - 5 (Rating model)
+A web application that not only supplies the user with info on blockbuster movies, but also keeps track of movies the user has seen, movies the user is interested in seeing, and movies the user never wants to see!
 
+[Demo Video](https://drive.google.com/drive/folders/1wl64F9HkieIqIkq1X_AIUDWe99847VYY)
 
+## Purpose
 
-* What do I do to store rented and bought movies for a particular user???
-	Do I create a column movie with these data types...
-	- movie:array (array data type)
-	- movie:path (path data type)
-	- movie:json (json data type)
+The goal of building this app was to learn more about connecting to a 3rd-party api.
 
-	or reference:bigint (store the TMDB movie id number for a particular movie)
+## Built With
+
+* [React](https://reactjs.org/) - a javascript library used for the frontend development
+* [react-router](https://reacttraining.com/react-router/) - for navigating the site.
+* [react-icons](https://www.npmjs.com/package/react-icons) - for an icon or two
+* [Ruby on Rails](https://rubyonrails.org/) - used for the backend
+* [postgreSQL](https://www.postgresql.org/) - was the database used
+* [bcrypt](https://rubygems.org/gems/bcrypt/versions/3.1.12) - to hash user passwords for real auth
+* [JSON Web Token (JWT)](https://rubygems.org/gems/jwt/versions/1.5.4) - providing security for stored user login data
 
 
 
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# planet_movie
+[Frontend repo](https://github.com/jeff-gosselin/planet_movie_front)
